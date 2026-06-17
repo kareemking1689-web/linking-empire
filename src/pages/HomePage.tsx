@@ -445,67 +445,69 @@ function HomePage() {
       </section>
 
       <footer className="bg-navy text-white">
-        <div className="container mx-auto px-4 py-14">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="container mx-auto px-4 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             {/* Brand */}
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col items-center md:items-start gap-3 text-center md:text-right">
+              <div className="flex items-center gap-3 justify-center md:justify-start">
                 <img
                   src="/linking_empire_group_general_supplies_-_1_(1).png"
                   alt="Linking Empire Group Logo"
-                  className="h-16 w-auto"
+                  className="h-14 w-auto"
                 />
                 <div>
                   <h3 className="font-bold text-lg">Linking Empire Group</h3>
                   <p className="text-sm text-gold">توريدات عمومية ومقاولات</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed text-center md:text-right max-w-xs">
+              <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                 شريكك الاستراتيجي في التوريدات العمومية والمقاولات منذ عام 2023، نلتزم بأعلى معايير الجودة والدقة في التنفيذ.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div className="flex flex-col items-center md:items-start gap-3">
-              <h4 className="font-bold text-gold text-lg mb-1 border-b border-gold/30 pb-2 w-full text-center md:text-right">روابط سريعة</h4>
-              {[
-                { label: 'الرئيسية', id: 'home' },
-                { label: 'خدماتنا', id: 'services' },
-                { label: 'شركاء النجاح', id: 'clients' },
-                { label: 'من نحن', id: 'about' },
-                { label: 'تواصل معنا', id: 'contact' },
-              ].map(({ label, id }) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className="text-gray-400 hover:text-gold transition-colors text-sm"
-                >
-                  {label}
-                </button>
-              ))}
+            <div className="flex flex-col items-center md:items-start gap-2">
+              <h4 className="font-bold text-gold text-base border-b border-gold/30 pb-2 w-full text-center md:text-right mb-1">روابط سريعة</h4>
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-x-8 gap-y-2 w-full">
+                {[
+                  { label: 'الرئيسية', id: 'home' },
+                  { label: 'خدماتنا', id: 'services' },
+                  { label: 'شركاء النجاح', id: 'clients' },
+                  { label: 'من نحن', id: 'about' },
+                  { label: 'تواصل معنا', id: 'contact' },
+                ].map(({ label, id }) => (
+                  <button
+                    key={id}
+                    onClick={() => scrollToSection(id)}
+                    className="text-gray-400 hover:text-gold transition-colors text-sm text-center md:text-right"
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Contact & Social */}
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <h4 className="font-bold text-gold text-lg mb-1 border-b border-gold/30 pb-2 w-full text-center md:text-right">تواصل معنا</h4>
+            <div className="flex flex-col items-center md:items-start gap-3">
+              <h4 className="font-bold text-gold text-base border-b border-gold/30 pb-2 w-full text-center md:text-right mb-1">تواصل معنا</h4>
               <a href="tel:+201552222167" className="flex items-center gap-2 text-gray-400 hover:text-gold transition-colors text-sm">
                 <Phone className="w-4 h-4 text-gold" />
                 +201552222167
               </a>
               <a href="https://wa.me/201552222167" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-gold transition-colors text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-4 h-4 fill-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-4 h-4 fill-gold flex-shrink-0">
                   <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.773L0 32l8.424-2.01A15.937 15.937 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.767-1.853l-.485-.288-5.003 1.194 1.237-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.464.299-.863.1-.398-.2-1.683-.62-3.205-1.98-1.184-1.057-1.984-2.363-2.216-2.761-.232-.398-.025-.614.174-.812.179-.178.398-.464.597-.696.2-.232.266-.398.399-.663.133-.266.066-.498-.033-.697-.1-.199-.896-2.161-1.228-2.959-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.696.1-1.061.498-.365.398-1.394 1.362-1.394 3.323s1.427 3.854 1.626 4.12c.2.265 2.809 4.287 6.807 6.013.951.411 1.693.656 2.272.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.891.332-.929.332-1.726.232-1.891-.099-.166-.365-.265-.763-.464z"/>
                 </svg>
                 واتساب
               </a>
-              <div className="flex items-center gap-4 mt-2">
+              <div className="flex items-center gap-4 mt-1">
                 <a
                   href="https://wa.me/201552222167"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
-                  className="bg-[#25D366] p-2 rounded-full hover:scale-110 transition-transform"
+                  className="bg-[#25D366] p-2.5 rounded-full hover:scale-110 transition-transform"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-white">
                     <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.773L0 32l8.424-2.01A15.937 15.937 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.767-1.853l-.485-.288-5.003 1.194 1.237-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.464.299-.863.1-.398-.2-1.683-.62-3.205-1.98-1.184-1.057-1.984-2.363-2.216-2.761-.232-.398-.025-.614.174-.812.179-.178.398-.464.597-.696.2-.232.266-.398.399-.663.133-.266.066-.498-.033-.697-.1-.199-.896-2.161-1.228-2.959-.323-.776-.651-.671-.896-.683l-.763-.013c-.265 0-.696.1-1.061.498-.365.398-1.394 1.362-1.394 3.323s1.427 3.854 1.626 4.12c.2.265 2.809 4.287 6.807 6.013.951.411 1.693.656 2.272.839.954.304 1.823.261 2.51.158.765-.114 2.354-.962 2.686-1.891.332-.929.332-1.726.232-1.891-.099-.166-.365-.265-.763-.464z"/>
@@ -516,7 +518,7 @@ function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="bg-[#1877F2] p-2 rounded-full hover:scale-110 transition-transform"
+                  className="bg-[#1877F2] p-2.5 rounded-full hover:scale-110 transition-transform"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 fill-white">
                     <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
